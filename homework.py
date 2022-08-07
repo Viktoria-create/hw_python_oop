@@ -144,4 +144,3 @@ def main(training: Training) -> None:
         for workout_type, data in packages:
             training = read_package(workout_type, data)
             main(training)
-
