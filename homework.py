@@ -145,3 +145,4 @@ def main(training: Training) -> None:
             training = read_package(workout_type, data)
             main(training)
 
+
