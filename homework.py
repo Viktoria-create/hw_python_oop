@@ -18,6 +18,7 @@ class InfoMessage:
             f' Потрачено ккал: {self.calories:.3f}.'
         )
 
+
 class Training:
     """Базовый класс тренировки."""
 
@@ -144,5 +145,3 @@ def main(training: Training) -> None:
         for workout_type, data in packages:
             training = read_package(workout_type, data)
             main(training)
-
-
