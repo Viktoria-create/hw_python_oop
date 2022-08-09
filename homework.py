@@ -129,10 +129,10 @@ def read_package(workout_type: str, data:
     training_type: Dict[str, Type[Training]] = {"SWM": Swimming,
                                                 "RUN": Running,
                                                 "WLK": SportsWalking}
-    if workout_type not in training_type:
-        raise ValueError(f'Нет тренировки {workout_type}.'
-                         f'Ожидалось {data.keys()}.')
-    return training_type[workout_type](*data)
+    try:
+        return training_type[workout_type](*data)
+    except KeyError:
+        print('Неизвестный тип тренировки')
 
 
 def main(training: Training) -> None:
